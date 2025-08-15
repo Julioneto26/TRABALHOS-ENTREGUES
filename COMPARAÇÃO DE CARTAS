@@ -4,7 +4,7 @@ int main()
 {
     //CADASTRO DE DADOS DA CARTA 01//
     
-    char Codigo[4];
+    char codigo[4];
     printf("Digite o código da carta (Exemplo:A01): \n");
     scanf("%3s", cidade); // Limita a entrada a 3 caracteres para evitar overflow
 
@@ -30,7 +30,7 @@ int main()
     
     //CADASTRO DE DADOS DA CARTA 02//
     
-    char Codigo2[4];
+    char codigo2[4];
     printf("Digite o código da carta (Exemplo:B02): \n");
     scanf("%3s", cidade); // Limita a entrada a 3 caracteres para evitar overflow
     
@@ -67,6 +67,59 @@ int main()
     printf("Área %f\n", area2);
     printf("PIB %f\n", pib2);
     printf("Pontos turisticos %d\n", pontosTuristicos2);
+
+    // Comparação de cartas
+    printf("\nComparando as cartas:\n");
+    printf("\n Escolha o dado que deseja comparar:\n"); 
+    printf("\nComparando as cartas:\n");    
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Pontos turísticos\n"); 
+    
+    int escolha;
+    printf("Digite o número da opção escolhida: ");
+    scanf("%d", &escolha);
+
+    switch (escolha) {
+        case 1:
+            if (populacao > populacao2) {
+                printf("A carta %s", codigo,"tem uma população maior que a carta%s", codigo2,".\n");
+                printf("A carta %s", codigo,"vence!.\n");
+            } else if (populacao < populacao2) {
+                printf("A carta %s", codigo2,"tem uma população maior que a carta%s", codigo,".\n");
+                printf("A carta %s", codigo2,"vence!.\n");
+            } else {
+                printf("As cartas têm a mesma População. Empate!!!\n");
+            }
+        case 2:
+            if (area > area2) {
+                printf("A carta %s", codigo,"tem uma área maior que a carta%s", codigo2,".\n");
+            } else if (area < area2) {
+                printf("A carta %s", codigo2,"tem uma área maior que a carta%s", codigo,".\n");
+            } else {
+                printf("As cartas têm a mesma área. Empate!!!\n");
+            }
+        case 3:
+            if (pib > pib2) {
+                printf("A carta %s", codigo,"tem um PIB maior que a carta%s", codigo2,".\n");
+            } else if (pib < pib2) {
+                printf("A carta %s", codigo2,"tem um PIB maior que a carta%s", codigo,".\n");
+            } else {
+                printf("As cartas têm o mesmo PIB. Empate!!!\n");
+            }
+        case 4:
+            if (pontosTuristicos > pontosTuristicos2) {
+                printf("A carta %s", codigo,"tem mais pontos turísticos que a carta%s", codigo2,".\n");
+            } else if (pontosTuristicos < pontosTuristicos2) {
+                printf("A carta %s", codigo2,"tem mais pontos turísticos que a carta%s", codigo,".\n");
+            } else {
+                printf("As cartas têm o mesmo número de pontos turísticos. Empate!!!\n");
+            }
+        default:
+            printf("Opção inválida. Por favor, escolha um número entre 1 e 4.\n");
+            break;  
+    } 
 
     return 0;
 }
