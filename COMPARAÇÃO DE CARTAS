@@ -6,62 +6,62 @@ int main()
     
     char codigo[4];
     printf("Digite o código da carta (Exemplo:A01): \n");
-    scanf("%3s", cidade); // Limita a entrada a 3 caracteres para evitar overflow
+    scanf("%3s", codigo); // Limita a entrada a 3 caracteres para evitar overflow
 
     char cidade[50];
-    printf("Digite o nome da cidade da carta A01: \n");
+    printf("Digite o nome da cidade da carta %s:\n", codigo);
     scanf("%49s", cidade); // Limita a entrada a 49 caracteres para evitar overflow
     
     int populacao;
-    printf("Digite o valor de população da carta A01: \n");
+    printf("Digite o valor de população da carta  %s:\n", codigo);
     scanf("%d", &populacao);
 
     float area;
-    printf("Digite o valor de Área da carta A01: \n");
+    printf("Digite o valor de Área da carta  %s:\n", codigo);
     scanf("%f", &area);
 
     float pib;
-    printf("Digite o valor do PIB da carta A01: \n");
+    printf("Digite o valor do PIB da carta  %s:\n", codigo);
     scanf("%f", &pib);
 
     int pontosTuristicos;
-    printf("Digite o número de pontos turísticos da carta A01: \n");
+    printf("Digite o número de pontos turísticos da carta  %s:\n", codigo);
     scanf("%d", &pontosTuristicos);
     
     //CADASTRO DE DADOS DA CARTA 02//
     
     char codigo2[4];
     printf("Digite o código da carta (Exemplo:B02): \n");
-    scanf("%3s", cidade); // Limita a entrada a 3 caracteres para evitar overflow
+    scanf("%3s", codigo2); // Limita a entrada a 3 caracteres para evitar overflow
     
     char cidade2[50];
-    printf("Digite o nome da cidade da carta B02: \n");
+    printf("Digite o nome da cidade da carta  %s:\n", codigo2);
     scanf("%49s", cidade2); // Limita a entrada a 49 caracteres para evitar overflow
     
     int populacao2;
-    printf("Digite o valor de população da carta B02: \n");
+    printf("Digite o valor de população da carta  %s:\n", codigo2);
     scanf("%d", &populacao2);
 
     float area2;
-    printf("Digite o valor de Área da carta B02: \n");
+    printf("Digite o valor de Área da carta  %s:\n", codigo2);
     scanf("%f", &area2);
 
     float pib2;
-    printf("Digite o valor do PIB da carta B02: \n");
+    printf("Digite o valor do PIB da carta %s:\n", codigo2);
     scanf("%f", &pib2);
 
     int pontosTuristicos2;
-    printf("Digite o número de pontos turísticos da carta B02: \n");
+    printf("Digite o número de pontos turísticos da carta  %s:\n", codigo2);
     scanf("%d", &pontosTuristicos2);
     
-    printf("Cadastrada cidade A01 Dados: \n");
+    printf("Cadastrada carta  %s:\n", codigo);
     printf("Nome %s\n", cidade);
     printf("População %d\n", populacao);
     printf("Área %f\n", area);
     printf("PIB %f\n", pib);
     printf("Pontos turisticos %d\n", pontosTuristicos);
 
-    printf("Cadastrada cidade B02 Dados: \n");
+    printf("Cadastrada cidade  %s:\n", codigo2);
     printf("Nome %s\n", cidade2);
     printf("População %d\n", populacao2);
     printf("Área %f\n", area2);
@@ -69,57 +69,81 @@ int main()
     printf("Pontos turisticos %d\n", pontosTuristicos2);
 
     // Comparação de cartas
+
     printf("\nComparando as cartas:\n");
-    printf("\n Escolha o dado que deseja comparar:\n"); 
-    printf("\nComparando as cartas:\n");    
+    printf("Carta %s vs Carta %s\n", codigo, codigo2);
+
+    // Variável para continuar comparando
+    int continuar = 1;
+    while (continuar) {
+    printf("Escolha o dado que deseja comparar:\n"); 
     printf("1. População\n");
     printf("2. Área\n");
     printf("3. PIB\n");
     printf("4. Pontos turísticos\n"); 
+    printf("5. Sair\n");
+
+    // Leitura da escolha do usuário
     
     int escolha;
-    printf("Digite o número da opção escolhida: ");
+    printf("Digite o número da opção escolhida: \n");
     scanf("%d", &escolha);
 
-    switch (escolha) {
+        switch (escolha) {
         case 1:
-            if (populacao > populacao2) {
-                printf("A carta %s", codigo,"tem uma população maior que a carta%s", codigo2,".\n");
-                printf("A carta %s", codigo,"vence!.\n");
-            } else if (populacao < populacao2) {
-                printf("A carta %s", codigo2,"tem uma população maior que a carta%s", codigo,".\n");
-                printf("A carta %s", codigo2,"vence!.\n");
+            if (populacao < populacao2) {
+                printf("A carta %s tem uma população menor que a carta %s\n", codigo,codigo2);
+                printf("A carta %s vence!.\n",codigo);
+            } else if (populacao > populacao2) {
+                printf("A carta %s tem uma população menor que a carta %s\n",codigo2, codigo);
+                printf("A carta %s vence!.\n", codigo2);
             } else {
                 printf("As cartas têm a mesma População. Empate!!!\n");
             }
+            break;
         case 2:
             if (area > area2) {
-                printf("A carta %s", codigo,"tem uma área maior que a carta%s", codigo2,".\n");
+                printf("A carta %s tem uma área maior que a carta %s\n",codigo, codigo2);
+                printf("A carta %s vence!.\n",codigo);
             } else if (area < area2) {
-                printf("A carta %s", codigo2,"tem uma área maior que a carta%s", codigo,".\n");
+                printf("A carta %s tem uma área maior que a carta %s\n", codigo2, codigo);
+                printf("A carta %s vence!.\n", codigo2);
             } else {
                 printf("As cartas têm a mesma área. Empate!!!\n");
             }
+            break;
         case 3:
             if (pib > pib2) {
-                printf("A carta %s", codigo,"tem um PIB maior que a carta%s", codigo2,".\n");
+                printf("A carta %s tem um PIB maior que a carta %s\n", codigo, codigo2);
+                printf("A carta %s vence!.\n",codigo);
             } else if (pib < pib2) {
-                printf("A carta %s", codigo2,"tem um PIB maior que a carta%s", codigo,".\n");
+                printf("A carta %s tem um PIB maior que a carta %s\n",codigo2, codigo);
+                printf("A carta %s vence!.\n", codigo2);
             } else {
                 printf("As cartas têm o mesmo PIB. Empate!!!\n");
             }
+            break;
         case 4:
             if (pontosTuristicos > pontosTuristicos2) {
-                printf("A carta %s", codigo,"tem mais pontos turísticos que a carta%s", codigo2,".\n");
+                printf("A carta %s tem mais pontos turísticos que a carta %s\n",codigo, codigo2);
+                printf("A carta %s vence!.\n",codigo);
             } else if (pontosTuristicos < pontosTuristicos2) {
-                printf("A carta %s", codigo2,"tem mais pontos turísticos que a carta%s", codigo,".\n");
+                printf("A carta %s tem mais pontos turísticos que a carta %s\n",codigo2, codigo);
+                printf("A carta %s vence!.\n",codigo2);
             } else {
                 printf("As cartas têm o mesmo número de pontos turísticos. Empate!!!\n");
             }
-        default:
-            printf("Opção inválida. Por favor, escolha um número entre 1 e 4.\n");
-            break;  
-    } 
+            break;
+        case 5:
+            continuar = 0;
+            printf("Saindo da comparação.\n");
+            break;
 
-    return 0;
+        default:
+            printf("Opção inválida. Por favor, escolha um número entre 1 e 5.\n");
+            break;  
+        } ;
+
+    }
+return 0;
 }
