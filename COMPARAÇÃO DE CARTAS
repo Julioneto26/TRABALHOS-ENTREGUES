@@ -2,8 +2,12 @@
 
 int main()
 {
-    //CADASTRO DE DADOS DA CARTA A01//
+    //CADASTRO DE DADOS DA CARTA 01//
     
+    char Codigo[4];
+    printf("Digite o código da carta (Exemplo:A01): \n");
+    scanf("%3s", cidade); // Limita a entrada a 3 caracteres para evitar overflow
+
     char cidade[50];
     printf("Digite o nome da cidade da carta A01: \n");
     scanf("%49s", cidade); // Limita a entrada a 49 caracteres para evitar overflow
@@ -24,7 +28,11 @@ int main()
     printf("Digite o número de pontos turísticos da carta A01: \n");
     scanf("%d", &pontosTuristicos);
     
-    //CADASTRO DE DADOS DA CARTA B02//
+    //CADASTRO DE DADOS DA CARTA 02//
+    
+    char Codigo2[4];
+    printf("Digite o código da carta (Exemplo:B02): \n");
+    scanf("%3s", cidade); // Limita a entrada a 3 caracteres para evitar overflow
     
     char cidade2[50];
     printf("Digite o nome da cidade da carta B02: \n");
