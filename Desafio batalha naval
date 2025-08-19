@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int tabuleiro[10][10] = {0};
+
+    // Navio um
+    for(int i=0; i<3; i++) {
+        tabuleiro[i][0] = 1;
+    }
+
+    // Navio dois
+    for(int i=1; i<4; i++) {
+        tabuleiro[i][7] = 2;
+    }
+
+    // Navio três
+    for(int i=2; i<5; i++) {
+        tabuleiro[i][5] = 3;
+    }
+
+    // Navio quatro
+    for(int j=3; j<6; j++) {
+        tabuleiro[9][j] = 4;
+    }
+    
+     // Navio cinco
+    for(int j=1; j<4; j++) {
+        tabuleiro[6][j] = 5;
+    }
+
+    // Exibir matriz completa
+    for(int i=0; i<10; i++) {
+        for(int j=0; j<10; j++) {
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
